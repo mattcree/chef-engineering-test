@@ -22,7 +22,7 @@ Write a program that takes a pair of directories as input and writes
 out three files as output.
 * A file named 'common', which contains files that are identical in both the
   first and second directories.
-* Files a\_only and b\_only, that contains the files that are only in
+* Files 'a\_only' and 'b\_only', that contains the files that are only in
   the first directory ('a') and those that are only in the second
   directory ('b')
 
@@ -50,10 +50,10 @@ files)
 
 ## Tips
 
-* We are looking for a functional solution over a perfectly written and
-  optimized solution.
+* We are looking for a functional, maintainable, and readable solution
+  over a perfectly written and optimized solution.
 
-* The md5sum utility might be useful
+* The md5sum utility might be useful.
 
 * There are not any 'tricks' intended in this problem. However, we
   (the authors), are human and can make mistakes. Please ask if
