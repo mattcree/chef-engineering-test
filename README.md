@@ -1,5 +1,5 @@
 
-# Chef Engineering Test - SDET
+# Chef Engineering Test - SDE
 
 Thank you for applying for an Engineering role at Chef.  The next step
 in your interview process is the completion of this assignment.  A
