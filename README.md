@@ -60,3 +60,6 @@ The three output files (a_only, b_only, common) should have been generated in th
 3. Files are grouped by identity in output
 4. Automated 'build' option isn't necessary due to only using standard library functions and due to Ruby's interpreted nature
 5. The directories are contain mostly small files
+6. Due to time constaints and limited Ruby experience
+    - Exception handling is minimal -- programmed to the happy path
+    - Input validation is minimal
