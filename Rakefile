@@ -5,7 +5,7 @@ task :build do
 end
 
 task :clean do
-  ruby "test/test.rb"
+  sh "rm out/*"
 end
 
 task :test do
@@ -13,6 +13,6 @@ task :test do
 end
 
 task :run do
-  ruby "lib/comparo.rb"
+  sh "ruby lib/comparo.rb -a test/data/dir_a/ -b test/data/dir_b/ -o out/"
 end
 

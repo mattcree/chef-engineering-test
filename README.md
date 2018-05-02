@@ -1,24 +1,9 @@
 
-# Chef Engineering Test - SDE
+# Comparo
 
-Thank you for applying for an Engineering role at Chef.  The next step
-in your interview process is the completion of this assignment.  A
-time will be - or already has been - scheduled to review the project
-with a Chef engineering staff member.
+# Description:
 
-During that review, you will be asked to walk the interviewer through your project
-code and discuss your decisions.
-
-If something is unclear or you need additional information, please ask
-the contact you were provided when you received the link to this
-assignment.
-
-The maximum time we suggest spending on this assignment is four hours.
-
-
-# Requirements:
-
-Write a program that takes a pair of directories as input and writes
+A program that takes a pair of directories as input and writes
 out three files as output.
 * A file named 'common', which contains files that are identical in both the
   first and second directories.
@@ -29,33 +14,38 @@ out three files as output.
 A file is considered identical if its contents are byte for byte identical (name,
 permissions and location don't matter.)
 
-Expect that this will be run on very large directory trees (100,000
-files) 
-
-
-## General
-
-* Use the language and (as necessary) frameworks of your choice.
+## Instructions
+### Automated Tasks
 * Ensure the following tasks exist and are automated via Makefile or other tool of your choice:
-  * build
   * clean
+    - Removes files in ```out/```
+    - ```$ rake clean```
   * test
+    - Runs unit tests
+    - ```$ rake test```
   * run
-* Your project should include testing at the level you find
-  appropriate. Be prepared to discuss your testing choices.
+    - Runs script with default input as ```test/data/dir_a``` and ```test/data/dir_b``` with the output as ```out/```
+    - ```$ rake run```
 
-* Modify this README.md to include any setup/instructions and any additional
-  notes that you wish to communicate. The existing content can be replaced if you wish.
-  * Ensure any build and runtime dependencies are captured in this README.md.
+### Usage
 
-## Tips
-
-* We are looking for a functional, maintainable, and readable solution
-  over a perfectly written and optimized solution.
-
-* The md5sum utility might be useful.
-
-* There are not any 'tricks' intended in this problem. However, we
-  (the authors), are human and can make mistakes. Please ask if
-  anything is unclear.
+Get help by running the script without args.
   
+```
+Usage: comparo.rb [options]
+    -a, --directory-a STRING         A directory path
+    -b, --directory-b STRING         A directory path
+    -o, --output-dir STRING          Output directory path
+
+```
+
+Typical usage as follows
+
+```ruby lib/comparo.rb -a test/data/dir_a/ -b test/data/dir_a/ -o out/```
+
+### Assumptions/Caveats
+
+1. There may be copies of the same file in the same directory i.e. two identical files with different names in a directory
+2. Only filepaths (relative) are required in output
+3. Files are grouped by identity in output
+4. 
