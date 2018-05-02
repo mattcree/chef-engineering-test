@@ -16,3 +16,6 @@ task :run do
   sh "ruby lib/comparo.rb -a test/data/dir_a/ -b test/data/dir_b/ -o out/"
 end
 
+task :doc do
+  sh "rdoc lib"
+end
