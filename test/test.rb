@@ -72,7 +72,29 @@ describe Comparo do
       actual = Comparo.compare(path_a, path_a)[:common].length
       actual.must_equal expected
     end
+    it 'should have correct num of common hashes' do
+      expected = 2
+      actual = Comparo.compare(path_a, path_a)[:common].length
+      actual.must_equal expected
+    end
   end 
   
+  describe 'appending filenames' do
+    dir = 'path/to/dir'
+    dir_with_slash = dir + '/'
+    filename = 'bobby'
+    full_path = dir_with_slash + filename
+
+    it 'append filename when trailing slash present' do
+      expected = full_path
+      actual = Comparo.append_filename(dir_with_slash, filename)
+      actual.must_equal expected
+    end
+    it 'append filename when no trailing slash present' do
+      expected = full_path 
+      actual = Comparo.append_filename(dir, filename)
+      actual.must_equal expected
+    end
+  end
 
 end

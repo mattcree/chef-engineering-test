@@ -18,11 +18,13 @@ module Comparo
   # - *args* - A Hash containing key/vals for :a, :b, :out
    
   def run(args)
+    # This step just ensures a trailing slash on our dir paths
     dir_a = append_filename(args[:a], "")
     dir_b = append_filename(args[:b], "")
     dir_out = append_filename(args[:out], "")
-    results = compare(args[:a], args[:b])
-    process_results(args[:out], results)
+
+    results = compare(dir_a, dir_b)
+    process_results(dir_out, results)
   end
   
 
@@ -50,7 +52,7 @@ module Comparo
     # Generate the lookup tables for each directory
     a = generate_lookup_table(a_dir)
     b = generate_lookup_table(b_dir)
-   
+
     # Return a map of the keysets and tables 
     {
       :a_only => only_in_first(a, b),
